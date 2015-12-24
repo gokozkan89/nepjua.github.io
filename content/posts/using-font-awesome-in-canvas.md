@@ -16,7 +16,7 @@ I thought that hard part was solved but the real hard part was to get unicode ch
 
 The idea was that you'll have a function that gets unicode character of the glyph from the icon's dom element. For example you have font-awesome icon like:
 
-```language=html
+```html
 <i class="fa fa-bus"></>
 ```
 
