@@ -12,7 +12,7 @@ Today i wanted to detect if user's inspector is open or not. I remembered a code
 
 The theory behind this method is that time spent between two statements are low, i didn't get the actual number but i know that it's low than 100ms. It might be even less than miliseconds. So if we check the time spent between startTime and endTime we can know that the inspecter is open. Anyway, here is the code:
 
-```language-javascript
+```js
 function isConsoleOpen() {
   var startTime = new Date();
   debugger;
