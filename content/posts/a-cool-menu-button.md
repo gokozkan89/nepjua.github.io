@@ -10,5 +10,5 @@ type = "post"
 +++
 I just had an idea for a menu button with a cool opening effect. I wrote a basic implementation on codepen just for fun, here it is:
 
-<iframe height='350' scrolling='no' src='http://codepen.io/nepjua/embed/ByjZXm/' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/nepjua/pen/ByjZXm/'>pure css cool effect menu</a> by nepjua (<a href='http://codepen.io/nepjua'>@nepjua</a>) on <a href='http://codepen.io'>CodePen</a>.
+<iframe height='350' scrolling='no' src='//codepen.io/nepjua/embed/ByjZXm/' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='//codepen.io/nepjua/pen/ByjZXm/'>pure css cool effect menu</a> by nepjua (<a href='//codepen.io/nepjua'>@nepjua</a>) on <a href='//codepen.io'>CodePen</a>.
 </iframe>
