@@ -1,0 +1,39 @@
+baseurl = "https://nepjua.org/"
+languageCode = "en-us"
+title = "Ahmet Yasin Uslu"
+theme = "hikari"
+
+[permalinks]
+	post = "/:year/:month/:day/:slug"
+
+[params]
+	name = "Ahmet Yasin Uslu"
+	description = ""
+	copyright = ""
+
+	# Enable comments by entering your Disqus shortname
+	disqusshortname = "nepjuaorg"
+	# Enable Google Analytics by entering your tracking code
+	googleanalytics = "UA-46666774-1"
+
+	# Links to newer/older blog posts
+	newer = "Newer"
+	older = "Older"
+
+	pageNotFoundTitle = "Page not found"
+	pageNotFoundSubtitle = "Sorry, but the requested page wasn’t <br> found on the server."
+
+[params.offcanvas]
+	# Menu items
+	title = "Hi, I'm Ahmet Yasin Uslu"
+	bio = "I'm a passionate developer and this is my blog where i write about my thoughts, experiences, failures and everything else that i decide to write."
+	subscribe = "Subscribe"
+	followme = "Follow me on"
+
+	[[params.offcanvas.socialnetworks]]
+		name = "Github"
+		url = "//github.com/yasinuslu"
+
+	[[params.offcanvas.socialnetworks]]
+		name = "Twitter"
+		url = "//twitter.com/nepjua"

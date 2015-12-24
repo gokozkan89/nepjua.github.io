@@ -1,0 +1,3 @@
+[submodule "themes/hikari"]
+	path = themes/hikari
+	url = git@github.com:yasinuslu/hugo-hikari-theme.git
