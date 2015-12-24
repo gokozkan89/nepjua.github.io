@@ -5,3 +5,12 @@ build:
         version: "0.15"
         theme: hikari
         flags: --buildDrafts=true
+
+deploy:
+  steps:
+    - install-packages:
+        packages: git ssh-client
+    - nepjua.github.io/gh-pages@0.2.1:
+        token: $GIT_TOKEN
+        domain: nepjua.github.io
+        basedir: public
