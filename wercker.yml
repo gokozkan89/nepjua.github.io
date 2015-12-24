@@ -12,5 +12,5 @@ deploy:
         packages: git ssh-client
     - lukevivier/gh-pages@0.2.1:
         token: $GIT_TOKEN
-        domain: nepjua.github.io
+        domain: nepjua.org
         basedir: public
