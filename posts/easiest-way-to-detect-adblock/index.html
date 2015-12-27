@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+
+
+ <html class="no-js"> 
+<head>
+    <title>Easiest way to detect adblock &middot; Ahmet Yasin Uslu</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-language" content="en-us" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Ahmet Yasin Uslu">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.15" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://nepjua.org/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/tomorrow.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700|Lora:400,700,400italic" rel="stylesheet" type="text/css">
+</head>
+<body>
+    
+    <div class="off-canvas">
+    <figure class="avatar">
+        <img src="https://nepjua.org/img/avatar.jpg" title="Ahmet Yasin Uslu">
+    </figure>
+    <div class="bio">
+        
+        <h1>Hi, I&#39;m Ahmet Yasin Uslu</h1>
+        
+        
+        <p>I&rsquo;m a passionate developer and this is my blog where i write about my thoughts, experiences, failures and everything else that i decide to write.</p>
+        
+    </div>
+    <nav>
+        
+        <h6>Subscribe</h6>
+        
+
+        <ul>
+            <li><a target="_blank" href="https://nepjua.org/index.xml">RSS feed</a></li>
+        </ul>
+
+        
+        <h6>Follow me on</h6>
+        
+
+        <ul>
+        
+            <li><a target="_blank" href="//github.com/yasinuslu">Github</a></li>
+        
+            <li><a target="_blank" href="//twitter.com/nepjua">Twitter</a></li>
+        
+        </ul>        
+    </nav>
+</div>
+
+    <div class="site-wrapper">
+        <header>
+	<div class="h-wrap">
+		
+		<h1 class="title"><a href="https://nepjua.org/">Ahmet Yasin Uslu</a></h1>
+		
+		<a class="menu-icon" title="Menu"><span class="lines"></span></a>
+	</div>
+</header>
+        
+        <section class="single-wrap">
+            <article class="single-content" itemscope itemtype="//schema.org/BlogPosting">
+                <div class="feat">
+                    <h5 class="page-date">
+                    <time datetime="" itemprop="datePublished">
+                    11. November 2014
+                    </time>
+                    </h5>
+                </div>
+                <h1 class="page-title" itemprop="name headline">Easiest way to detect adblock</h1>
+                <div itemprop="articleBody">
+                    <p>Today i wanted to share a super easy method to detect adblock. I discovered that any path that matches a regexp like <code>/ad/i</code> would be blocked by adblocker. I just try to fetch a dummy image named <code>ads.png</code> and check if the request was successfull. Here is a simple code with jQuery:</p>
+
+<pre><code class="language-js">$.ajax({
+  url: '/ads.png',
+  error: function() {
+    console.log(&quot;WTF man i thought you were a friend, go close your adblocker.&quot;);
+  },
+  success: function() {
+    console.log(&quot;Cool bro, you're a good friend&quot;);
+  }
+});
+</code></pre>
+
+                </div>
+                <div class="feat share">
+                    <a href="//twitter.com/share" class="popup">
+                        <span class="icon-twitter"></span>
+                    </a>
+                </div>
+                
+                
+                    <section class="disqus">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	var disqus_shortname = 'nepjuaorg';
+	var disqus_developer = 0; 
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+                
+
+                
+                    <a rel="next" href="https://nepjua.org/posts/a-cool-menu-button/" id="next">
+                        <span class="nav-title nav-title-next">Newer</span> &rarr;
+                    </a>
+                
+                
+                    <a rel="prev" href="https://nepjua.org/posts/using-font-awesome-in-canvas/" id="prev">
+                        &larr; <span class="nav-title nav-title-prev">Older</span>
+                    </a>
+                
+            </article>
+        </section>
+
+        <footer>
+	
+</footer>
+    </div>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://nepjua.org/js/main.js"></script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-46666774-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+<!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

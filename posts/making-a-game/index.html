@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+
+
+ <html class="no-js"> 
+<head>
+    <title>Making a game &middot; Ahmet Yasin Uslu</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-language" content="en-us" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Ahmet Yasin Uslu">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.15" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://nepjua.org/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/tomorrow.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700|Lora:400,700,400italic" rel="stylesheet" type="text/css">
+</head>
+<body>
+    
+    <div class="off-canvas">
+    <figure class="avatar">
+        <img src="https://nepjua.org/img/avatar.jpg" title="Ahmet Yasin Uslu">
+    </figure>
+    <div class="bio">
+        
+        <h1>Hi, I&#39;m Ahmet Yasin Uslu</h1>
+        
+        
+        <p>I&rsquo;m a passionate developer and this is my blog where i write about my thoughts, experiences, failures and everything else that i decide to write.</p>
+        
+    </div>
+    <nav>
+        
+        <h6>Subscribe</h6>
+        
+
+        <ul>
+            <li><a target="_blank" href="https://nepjua.org/index.xml">RSS feed</a></li>
+        </ul>
+
+        
+        <h6>Follow me on</h6>
+        
+
+        <ul>
+        
+            <li><a target="_blank" href="//github.com/yasinuslu">Github</a></li>
+        
+            <li><a target="_blank" href="//twitter.com/nepjua">Twitter</a></li>
+        
+        </ul>        
+    </nav>
+</div>
+
+    <div class="site-wrapper">
+        <header>
+	<div class="h-wrap">
+		
+		<h1 class="title"><a href="https://nepjua.org/">Ahmet Yasin Uslu</a></h1>
+		
+		<a class="menu-icon" title="Menu"><span class="lines"></span></a>
+	</div>
+</header>
+        
+        <section class="single-wrap">
+            <article class="single-content" itemscope itemtype="//schema.org/BlogPosting">
+                <div class="feat">
+                    <h5 class="page-date">
+                    <time datetime="" itemprop="datePublished">
+                    8. August 2014
+                    </time>
+                    </h5>
+                </div>
+                <h1 class="page-title" itemprop="name headline">Making a game</h1>
+                <div itemprop="articleBody">
+                    <p>I&rsquo;m not very experienced at game developing. I started developing games 4 months ago and my first game is <a href="https://play.google.com/store/apps/details?id=com.ttygames.circular2048&amp;hl=en">Circular 2048</a> which taught me many things about game development.</p>
+
+<p>After looking into <a href="https://github.com/gabrielecirulli/2048">gabrielecirulli&rsquo;s 2048</a> we thought it will be easy to develop circular version of 2048. We couldn&rsquo;t be more wrong.</p>
+
+<p>We first started with <a href="http://phaser.io/">Phaser</a> and started drawing shapes instead of using sprites we resulted into drawing really crappy visuals not mentioning awful performance then we found a better way to draw our shapes and fixed crappy visuals. But that didn&rsquo;t solve our performance problems and we start thinking of ways to use sprites.</p>
+
+<p>We designed square sprites for all the tiles and used masks to clip our sprites to be circular. We achieved better visual&rsquo;s and a little better performance but it wasn&rsquo;t even performant at browser. Then we started looking for other engines and found cocos2dx-js, that seemed good at theory so we start making experiments with it. We rendered circles with different radius on every frame to see performance but it wasn&rsquo;t good enough to port our game to cocos2dx-js.</p>
+
+<p>We decided to gove another shot for phaser and decided to cache our masks at booting and then used that on game. We definitely fixed performance problems with it but overlapping tiles bump into our life. All of these took nearly 1 month and right as we started losing our motivation we realized that we needed a library that&rsquo;s meant to draw shapes not sprites. That was the moment we found that we can use svg to render our shapes.</p>
+
+<p>At first we started using RaphaelJS library and it was really good but we were having problems with syncing tiles on screen with the tiles in our game then we go back to research for another library. That was the moment we met with the magical world of d3js. They had a perfect pattern that lets you easily sync your data and it&rsquo;s visual representation.</p>
+
+<p>We completed our game and started focusing on other things such as increasing user experience on mobile devices.</p>
+
+<p>You can install &ldquo;Circular 2048&rdquo; from:</p>
+
+<ul>
+<li><p><a href="https://play.google.com/store/apps/details?id=com.ttygames.circular2048">https://play.google.com/store/apps/details?id=com.ttygames.circular2048</a></p></li>
+
+<li><p><a href="https://itunes.apple.com/us/app/circular-2048/id902346134?ls=1&amp;mt=8">https://itunes.apple.com/us/app/circular-2048/id902346134?ls=1&amp;mt=8</a></p></li>
+</ul>
+
+                </div>
+                <div class="feat share">
+                    <a href="//twitter.com/share" class="popup">
+                        <span class="icon-twitter"></span>
+                    </a>
+                </div>
+                
+                
+                    <section class="disqus">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	var disqus_shortname = 'nepjuaorg';
+	var disqus_developer = 0; 
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+                
+
+                
+                    <a rel="next" href="https://nepjua.org/posts/check-if-browser-console-is-open/" id="next">
+                        <span class="nav-title nav-title-next">Newer</span> &rarr;
+                    </a>
+                
+                
+                    <a rel="prev" href="https://nepjua.org/posts/first-post/" id="prev">
+                        &larr; <span class="nav-title nav-title-prev">Older</span>
+                    </a>
+                
+            </article>
+        </section>
+
+        <footer>
+	
+</footer>
+    </div>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://nepjua.org/js/main.js"></script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-46666774-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+<!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

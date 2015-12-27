@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+
+
+ <html class="no-js"> 
+<head>
+    <title>Using font-awesome in canvas &middot; Ahmet Yasin Uslu</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="content-language" content="en-us" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Ahmet Yasin Uslu">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.15" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="https://nepjua.org/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/tomorrow.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700|Lora:400,700,400italic" rel="stylesheet" type="text/css">
+</head>
+<body>
+    
+    <div class="off-canvas">
+    <figure class="avatar">
+        <img src="https://nepjua.org/img/avatar.jpg" title="Ahmet Yasin Uslu">
+    </figure>
+    <div class="bio">
+        
+        <h1>Hi, I&#39;m Ahmet Yasin Uslu</h1>
+        
+        
+        <p>I&rsquo;m a passionate developer and this is my blog where i write about my thoughts, experiences, failures and everything else that i decide to write.</p>
+        
+    </div>
+    <nav>
+        
+        <h6>Subscribe</h6>
+        
+
+        <ul>
+            <li><a target="_blank" href="https://nepjua.org/index.xml">RSS feed</a></li>
+        </ul>
+
+        
+        <h6>Follow me on</h6>
+        
+
+        <ul>
+        
+            <li><a target="_blank" href="//github.com/yasinuslu">Github</a></li>
+        
+            <li><a target="_blank" href="//twitter.com/nepjua">Twitter</a></li>
+        
+        </ul>        
+    </nav>
+</div>
+
+    <div class="site-wrapper">
+        <header>
+	<div class="h-wrap">
+		
+		<h1 class="title"><a href="https://nepjua.org/">Ahmet Yasin Uslu</a></h1>
+		
+		<a class="menu-icon" title="Menu"><span class="lines"></span></a>
+	</div>
+</header>
+        
+        <section class="single-wrap">
+            <article class="single-content" itemscope itemtype="//schema.org/BlogPosting">
+                <div class="feat">
+                    <h5 class="page-date">
+                    <time datetime="" itemprop="datePublished">
+                    10. October 2014
+                    </time>
+                    </h5>
+                </div>
+                <h1 class="page-title" itemprop="name headline">Using font-awesome in canvas</h1>
+                <div itemprop="articleBody">
+                    <p>Yesterday i wanted to use font-awesome in canvas. I researched and found out that we can use glyphs in canvas similar to how we use them in css. You just set font to &ldquo;FontAwesome&rdquo; and set content to the unicode character and you&rsquo;re ready to go.</p>
+
+<p>I did some testing in browser console and with a little bit of effort i placed my icon in the canvas.</p>
+
+<p>I thought that hard part was solved but the real hard part was to get unicode characters for each icon in font-awesome. One can get a json with doing some text editing to font-awesome.css, but i wanted to make a generic solution that can be applied to any glyph you want on internet.</p>
+
+<p>The idea was that you&rsquo;ll have a function that gets unicode character of the glyph from the icon&rsquo;s dom element. For example you have font-awesome icon like:</p>
+
+<pre><code class="language-html">&lt;i class=&quot;fa fa-bus&quot;&gt;&lt;/&gt;
+</code></pre>
+
+<p>This function will return <code>&quot;\uF207&quot;</code> when you call it with the DomElement instance. I found out <a href="http://pankajparashar.com/posts/modify-pseudo-elements-css/">here</a> that we can get computed style of any element we want. Then i wrote a tiny script that gets all font-awesome glyphs when you run it on font awesome&rsquo;s icons page. Here is the script:</p>
+
+<script src="https://gist.github.com/yasinuslu/f03eafd9237b12f306d4.js?file=fa_extractor.js"></script>
+
+<p>And here is the complete list of font-awesome icons.</p>
+
+<script src="https://gist.github.com/yasinuslu/f03eafd9237b12f306d4.js?file=fa.js"></script>
+
+                </div>
+                <div class="feat share">
+                    <a href="//twitter.com/share" class="popup">
+                        <span class="icon-twitter"></span>
+                    </a>
+                </div>
+                
+                
+                    <section class="disqus">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	var disqus_shortname = 'nepjuaorg';
+	var disqus_developer = 0; 
+	(function() {
+	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+	dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	<a href="//disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</section>
+                
+
+                
+                    <a rel="next" href="https://nepjua.org/posts/easiest-way-to-detect-adblock/" id="next">
+                        <span class="nav-title nav-title-next">Newer</span> &rarr;
+                    </a>
+                
+                
+                    <a rel="prev" href="https://nepjua.org/posts/cloud-gaming/" id="prev">
+                        &larr; <span class="nav-title nav-title-prev">Older</span>
+                    </a>
+                
+            </article>
+        </section>
+
+        <footer>
+	
+</footer>
+    </div>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://nepjua.org/js/main.js"></script>
+
+
+<!-- Google Analytics -->
+<script>
+  var _gaq=[['_setAccount','UA-46666774-1'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+<!-- Syntax highlighting -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

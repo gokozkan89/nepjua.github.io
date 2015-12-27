@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ahmet Yasin Uslu</title>
+    <link>https://nepjua.org/</link>
+    <description>Recent content on Ahmet Yasin Uslu</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Dec 2015 04:16:31 +0200</lastBuildDate>
+    <atom:link href="https://nepjua.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Disable inactive pane overlay in atom</title>
+      <link>https://nepjua.org/posts/disable-inactive-pane-overlay-in-atom/</link>
+      <pubDate>Sun, 27 Dec 2015 04:16:31 +0200</pubDate>
+      
+      <guid>https://nepjua.org/posts/disable-inactive-pane-overlay-in-atom/</guid>
+      <description>&lt;p&gt;Sometimes i have two components that does similar things and i want to compare
+them side by side. I use split pane feature in atom to do this but when you
+use split panes atom puts an overlay over inactive pane and i really hate that
+today i decided to disable that i googled if there is any option to do that. I
+couldn&amp;rsquo;t find anything on web so i decided to disable it myself. I love how you
+can easily customize atom using web developer tools since atom uses web
+technologies.&lt;/p&gt;
+
+&lt;p&gt;Anyway here is css to disable that:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;/* disable inactive pane overlay */
+atom-pane:not(.active) {
+  opacity: inherit;
+}
+
+atom-pane-container atom-pane {
+  background-color: inherit;
+}
+
+atom-pane:not(.active) atom-text-editor {
+  background-color: inherit;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t know where to add this code, here is how:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hit &lt;code&gt;Ctrl + Shift + P&lt;/code&gt; ( &lt;code&gt;Cmd + Shift + P&lt;/code&gt; for OSX )&lt;/li&gt;
+&lt;li&gt;Start typing &lt;code&gt;open your stylesheet&lt;/code&gt; when you see &lt;code&gt;Open Your StyleSheet&lt;/code&gt; hit
+&lt;code&gt;Return&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A cool menu button</title>
+      <link>https://nepjua.org/posts/a-cool-menu-button/</link>
+      <pubDate>Mon, 08 Dec 2014 00:58:20 +0200</pubDate>
+      
+      <guid>https://nepjua.org/posts/a-cool-menu-button/</guid>
+      <description>&lt;p&gt;I just had an idea for a menu button with a cool opening effect. I wrote a basic implementation on codepen just for fun, here it is:&lt;/p&gt;
+
+&lt;iframe height=&#39;350&#39; scrolling=&#39;no&#39; src=&#39;//codepen.io/nepjua/embed/ByjZXm/&#39; frameborder=&#39;no&#39; allowtransparency=&#39;true&#39; allowfullscreen=&#39;true&#39; style=&#39;width: 100%;&#39;&gt;See the Pen &lt;a href=&#39;//codepen.io/nepjua/pen/ByjZXm/&#39;&gt;pure css cool effect menu&lt;/a&gt; by nepjua (&lt;a href=&#39;//codepen.io/nepjua&#39;&gt;@nepjua&lt;/a&gt;) on &lt;a href=&#39;//codepen.io&#39;&gt;CodePen&lt;/a&gt;.
+&lt;/iframe&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Easiest way to detect adblock</title>
+      <link>https://nepjua.org/posts/easiest-way-to-detect-adblock/</link>
+      <pubDate>Tue, 04 Nov 2014 00:46:44 +0200</pubDate>
+      
+      <guid>https://nepjua.org/posts/easiest-way-to-detect-adblock/</guid>
+      <description>&lt;p&gt;Today i wanted to share a super easy method to detect adblock. I discovered that any path that matches a regexp like &lt;code&gt;/ad/i&lt;/code&gt; would be blocked by adblocker. I just try to fetch a dummy image named &lt;code&gt;ads.png&lt;/code&gt; and check if the request was successfull. Here is a simple code with jQuery:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;$.ajax({
+  url: &#39;/ads.png&#39;,
+  error: function() {
+    console.log(&amp;quot;WTF man i thought you were a friend, go close your adblocker.&amp;quot;);
+  },
+  success: function() {
+    console.log(&amp;quot;Cool bro, you&#39;re a good friend&amp;quot;);
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using font-awesome in canvas</title>
+      <link>https://nepjua.org/posts/using-font-awesome-in-canvas/</link>
+      <pubDate>Sun, 26 Oct 2014 23:51:11 +0200</pubDate>
+      
+      <guid>https://nepjua.org/posts/using-font-awesome-in-canvas/</guid>
+      <description>&lt;p&gt;Yesterday i wanted to use font-awesome in canvas. I researched and found out that we can use glyphs in canvas similar to how we use them in css. You just set font to &amp;ldquo;FontAwesome&amp;rdquo; and set content to the unicode character and you&amp;rsquo;re ready to go.&lt;/p&gt;
+
+&lt;p&gt;I did some testing in browser console and with a little bit of effort i placed my icon in the canvas.&lt;/p&gt;
+
+&lt;p&gt;I thought that hard part was solved but the real hard part was to get unicode characters for each icon in font-awesome. One can get a json with doing some text editing to font-awesome.css, but i wanted to make a generic solution that can be applied to any glyph you want on internet.&lt;/p&gt;
+
+&lt;p&gt;The idea was that you&amp;rsquo;ll have a function that gets unicode character of the glyph from the icon&amp;rsquo;s dom element. For example you have font-awesome icon like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-html&#34;&gt;&amp;lt;i class=&amp;quot;fa fa-bus&amp;quot;&amp;gt;&amp;lt;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This function will return &lt;code&gt;&amp;quot;\uF207&amp;quot;&lt;/code&gt; when you call it with the DomElement instance. I found out &lt;a href=&#34;http://pankajparashar.com/posts/modify-pseudo-elements-css/&#34;&gt;here&lt;/a&gt; that we can get computed style of any element we want. Then i wrote a tiny script that gets all font-awesome glyphs when you run it on font awesome&amp;rsquo;s icons page. Here is the script:&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/yasinuslu/f03eafd9237b12f306d4.js?file=fa_extractor.js&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;And here is the complete list of font-awesome icons.&lt;/p&gt;
+
+&lt;script src=&#34;https://gist.github.com/yasinuslu/f03eafd9237b12f306d4.js?file=fa.js&#34;&gt;&lt;/script&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Cloud Gaming</title>
+      <link>https://nepjua.org/posts/cloud-gaming/</link>
+      <pubDate>Fri, 19 Sep 2014 12:13:28 +0300</pubDate>
+      
+      <guid>https://nepjua.org/posts/cloud-gaming/</guid>
+      <description>&lt;p&gt;I always thought of a future that we do everything on cloud including gaming. In this future nobody would have to buy a powerful hardware they would just buy some device that has just enough hardware to stream IO between our device and cloud. And all the processing power would be on the cloud.&lt;/p&gt;
+
+&lt;p&gt;Today my friend told me that there is already a gaming platform on the cloud: &lt;a href=&#34;https://www.onlive.com/&#34;&gt;https://www.onlive.com/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I gave it a try with 10 MBit connection it wasn&amp;rsquo;t playable but promising. Then we tested the platform with 60 MBit connection and it was like magic. It was almost like that there wasn no network between the hardware and our device.&lt;/p&gt;
+
+&lt;p&gt;The platform gives you 30 minute free trial which is enough to test it. In order to try the platform:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Download and install onlive&lt;/li&gt;
+&lt;li&gt;Go to spectate&lt;/li&gt;
+&lt;li&gt;Start spectating someone&amp;rsquo;s game&lt;/li&gt;
+&lt;li&gt;Hit &amp;lsquo;P&amp;rsquo; and start playing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you want to give it a try you can go here: &lt;a href=&#34;https://www.onlive.com/&#34;&gt;https://www.onlive.com/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Check if browser console is open</title>
+      <link>https://nepjua.org/posts/check-if-browser-console-is-open/</link>
+      <pubDate>Sun, 07 Sep 2014 21:36:07 +0300</pubDate>
+      
+      <guid>https://nepjua.org/posts/check-if-browser-console-is-open/</guid>
+      <description>&lt;p&gt;Today i wanted to detect if user&amp;rsquo;s inspector is open or not. I remembered a code i saw in meteor&amp;rsquo;s test runner. I gave it a shot and implemented it. It&amp;rsquo;s a very hacky way but it works.&lt;/p&gt;
+
+&lt;p&gt;The theory behind this method is that time spent between two statements are low, i didn&amp;rsquo;t get the actual number but i know that it&amp;rsquo;s low than 100ms. It might be even less than miliseconds. So if we check the time spent between startTime and endTime we can know that the inspecter is open. Anyway, here is the code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function isConsoleOpen() {
+  var startTime = new Date();
+  debugger;
+  var endTime = new Date();
+
+  return endTime - startTime &amp;gt; 100;
+}
+
+$(function() {
+  $(window).resize(function() {
+    if(isConsoleOpen()) {
+        alert(&amp;quot;You&#39;re one sneaky dude, aren&#39;t you ?&amp;quot;)
+    }
+  });
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There is always a hacky way to do something in javascript. Above code is written only to demonstrate the theory i explained here and it&amp;rsquo;s a very poor implementation of it.&lt;/p&gt;
+
+&lt;p&gt;It would be more pleasent if we could do this without having to pause user&amp;rsquo;s debugger on the &lt;code&gt;debugger;&lt;/code&gt; statement. Anyway we could still be able to achieve what we wanted. You can use this trick to a few things, for example hiring a developer. If someone is inspecting your web application he/she might be interested in working with you.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Making a game</title>
+      <link>https://nepjua.org/posts/making-a-game/</link>
+      <pubDate>Thu, 14 Aug 2014 00:01:25 +0300</pubDate>
+      
+      <guid>https://nepjua.org/posts/making-a-game/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m not very experienced at game developing. I started developing games 4 months ago and my first game is &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.ttygames.circular2048&amp;amp;hl=en&#34;&gt;Circular 2048&lt;/a&gt; which taught me many things about game development.&lt;/p&gt;
+
+&lt;p&gt;After looking into &lt;a href=&#34;https://github.com/gabrielecirulli/2048&#34;&gt;gabrielecirulli&amp;rsquo;s 2048&lt;/a&gt; we thought it will be easy to develop circular version of 2048. We couldn&amp;rsquo;t be more wrong.&lt;/p&gt;
+
+&lt;p&gt;We first started with &lt;a href=&#34;http://phaser.io/&#34;&gt;Phaser&lt;/a&gt; and started drawing shapes instead of using sprites we resulted into drawing really crappy visuals not mentioning awful performance then we found a better way to draw our shapes and fixed crappy visuals. But that didn&amp;rsquo;t solve our performance problems and we start thinking of ways to use sprites.&lt;/p&gt;
+
+&lt;p&gt;We designed square sprites for all the tiles and used masks to clip our sprites to be circular. We achieved better visual&amp;rsquo;s and a little better performance but it wasn&amp;rsquo;t even performant at browser. Then we started looking for other engines and found cocos2dx-js, that seemed good at theory so we start making experiments with it. We rendered circles with different radius on every frame to see performance but it wasn&amp;rsquo;t good enough to port our game to cocos2dx-js.&lt;/p&gt;
+
+&lt;p&gt;We decided to gove another shot for phaser and decided to cache our masks at booting and then used that on game. We definitely fixed performance problems with it but overlapping tiles bump into our life. All of these took nearly 1 month and right as we started losing our motivation we realized that we needed a library that&amp;rsquo;s meant to draw shapes not sprites. That was the moment we found that we can use svg to render our shapes.&lt;/p&gt;
+
+&lt;p&gt;At first we started using RaphaelJS library and it was really good but we were having problems with syncing tiles on screen with the tiles in our game then we go back to research for another library. That was the moment we met with the magical world of d3js. They had a perfect pattern that lets you easily sync your data and it&amp;rsquo;s visual representation.&lt;/p&gt;
+
+&lt;p&gt;We completed our game and started focusing on other things such as increasing user experience on mobile devices.&lt;/p&gt;
+
+&lt;p&gt;You can install &amp;ldquo;Circular 2048&amp;rdquo; from:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.ttygames.circular2048&#34;&gt;https://play.google.com/store/apps/details?id=com.ttygames.circular2048&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://itunes.apple.com/us/app/circular-2048/id902346134?ls=1&amp;amp;mt=8&#34;&gt;https://itunes.apple.com/us/app/circular-2048/id902346134?ls=1&amp;amp;mt=8&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>First Post</title>
+      <link>https://nepjua.org/posts/first-post/</link>
+      <pubDate>Fri, 08 Aug 2014 03:20:32 +0300</pubDate>
+      
+      <guid>https://nepjua.org/posts/first-post/</guid>
+      <description>
+
+&lt;p&gt;I just opened this blog but i actually wanted to start blogging years ago. Whenever i try to open a blog i lose my motivation in the search of perfection.&lt;/p&gt;
+
+&lt;p&gt;Today started as another day i try to open my website (i searched every static site generators, plug and play platforms like tumblr, ghost themes) just as i started losing my motivation an hour ago i promised myself to finally open it today. I downloaded &lt;a href=&#34;https://ghost.org/&#34;&gt;Ghost&lt;/a&gt; which is the platform i found most suitable. Tested it locally then configured my VPS with nginx and supervisor. Here i am writing my very first post which i had planned to write years ago, so today is a special day for me.&lt;/p&gt;
+
+&lt;h4 id=&#34;i-finally-did-it-yayy:f3b70d76da56e15d82042b9ef176d71f&#34;&gt;I finally did it, yayy!!!&lt;/h4&gt;
+
+&lt;p&gt;From now on i&amp;rsquo;m gonna try not overthinking things.&lt;/p&gt;
+
+&lt;p&gt;Altough i started using ghost an hour ago i find it delighting, it feels you at home without slowing you down. Soon i&amp;rsquo;ll write a blog post about my experience with &lt;a href=&#34;https://ghost.org/&#34;&gt;Ghost&lt;/a&gt; after spending some serious time with it.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
